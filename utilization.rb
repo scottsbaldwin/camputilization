@@ -41,7 +41,8 @@ values = {}
     sunday = Date.commercial(year, week, 1) - 1
     saturday = Date.commercial(year, week, 6)
     
-    puts "%s\t%s\t%s\t%s" % [sunday, saturday, matches.length, week]
+    puts "\nStart\tEnd\tPeople at Camp" if week % 10 == 0
+    puts "%s\t%s\t%s" % [sunday, saturday, matches.length]
     
     values[year].push matches.length
   end
@@ -53,7 +54,7 @@ end
   mean = sum.to_f / arr.size
   max = arr.max
   min = arr.min
-  puts "#{year} weekly average: %.00f" % [mean]
+  puts "\n#{year} weekly average: %.00f" % [mean]
   puts "#{year} max: %.00f" % [max]
   puts "#{year} min: %.00f" % [min]
 end
